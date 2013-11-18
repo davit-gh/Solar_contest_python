@@ -22,7 +22,8 @@ def loadRealData(fname):
     return features,outcome
 
 '''linear regression with feature standadrdization
-(using Normal Equation for finding optimal parameters)'''
+(using Normal Equation for finding optimal parameters)
+'''
 def regression(feat,y):
     feat = np.mat(feat)
     meanfeat = np.mean(feat,0)
@@ -78,15 +79,6 @@ def cvRidge(trainfeat,cvfeat,trainy,cvy):
     print "lambda for min mae exp(%d-25): %f" % (np.argmin(maes),np.exp(np.argmin(maes)-25))
     return np.min(maes), np.exp(np.argmin(maes)-25)
 
-''' Description: Makes a prediction based on normalized values returned by 
-	regression(feat,y)
-	Parameters: Arrays of features(feat) and target variables(y)
-def LinearRegressionPredict(feat,y):
-    thetas, normfeat, normy = regression(feat,y)
-    hx = normfeat * thetas
-  #  print np.sum(np.abs(hx-normy.T))/normy.shape[1]
-    #return hx
-    print metrics.mean_absolute_error(hx,normy)
 
 ''' Description: Standardizing cv dataset using 
 	mean and variance of the training dataset
