@@ -111,6 +111,7 @@ def plotRidgeLambdas(feat,y):
 	y    : target variables
 	model: model to be used for cv
 	n    : number of folds
+'''
 def nfoldcv(feat,y,model,n=10):
     MAE = 0.0
     minls = 0.0
@@ -119,8 +120,8 @@ def nfoldcv(feat,y,model,n=10):
         (feat,y,test_size=.3,random_state=i*SEED)
         #model.fit(trainX,trainY)
         #pred = model.predict(cvX)
- #       pred,normcvY = testRegression1(trainX,cvX,trainY,cvY)
- #       mae = metrics.mean_absolute_error(pred,normcvY)
+ #      pred,normcvY = testRegression1(trainX,cvX,trainY,cvY)
+ #      mae = metrics.mean_absolute_error(pred,normcvY)
         mae,minlambda = testRidge(trainX,cvX,trainY,cvY)
         print "mae for %d/%d run is %f" % (i,n,mae)
         MAE += mae
@@ -129,6 +130,7 @@ def nfoldcv(feat,y,model,n=10):
 
 ''' main() function uses Ridge() function from sklearn.linear_model package
 	and nfolcv() for cross-validation
+'''
 def main():
     feat,y = loadRealData('spline_train.csv')
     model = Ridge(normalize=True)
