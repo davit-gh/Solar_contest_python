@@ -120,17 +120,22 @@ def nfoldcv(feat,y,model,n=10):
         (feat,y,test_size=.3,random_state=i*SEED)
         #model.fit(trainX,trainY)
         #pred = model.predict(cvX)
- #       pred,normcvY = testRegression1(trainX,cvX,trainY,cvY)
- #       mae = metrics.mean_absolute_error(pred,normcvY)
+ #      pred,normcvY = testRegression1(trainX,cvX,trainY,cvY)
+ #      mae = metrics.mean_absolute_error(pred,normcvY)
         mae,minlambda = testRidge(trainX,cvX,trainY,cvY)
         print "mae for %d/%d run is %f" % (i,n,mae)
         MAE += mae
         minls += minlambda
     print "Average mae: %f\nAverage lambda: %f" % (MAE/float(n),minls/float(n))
 
+<<<<<<< HEAD
 ''' main() function uses Ridge() function from 
 	sklearn.linear_model package and nfolcv() 
 	for cross-validation
+=======
+''' main() function uses Ridge() function from sklearn.linear_model package
+	and nfolcv() for cross-validation
+>>>>>>> 678dbab4164f215063c3d7ba57b55fccde8852f7
 '''
 def main():
     feat,y = loadRealData('spline_train.csv')
