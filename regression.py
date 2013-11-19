@@ -111,6 +111,7 @@ def plotRidgeLambdas(feat,y):
 	y    : target variables
 	model: model to be used for cv
 	n    : number of folds
+'''
 def nfoldcv(feat,y,model,n=10):
     MAE = 0.0
     minls = 0.0
@@ -127,8 +128,10 @@ def nfoldcv(feat,y,model,n=10):
         minls += minlambda
     print "Average mae: %f\nAverage lambda: %f" % (MAE/float(n),minls/float(n))
 
-''' main() function uses Ridge() function from sklearn.linear_model package
-	and nfolcv() for cross-validation
+''' main() function uses Ridge() function from 
+	sklearn.linear_model package and nfolcv() 
+	for cross-validation
+'''
 def main():
     feat,y = loadRealData('spline_train.csv')
     model = Ridge(normalize=True)
