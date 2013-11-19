@@ -128,14 +128,10 @@ def nfoldcv(feat,y,model,n=10):
         minls += minlambda
     print "Average mae: %f\nAverage lambda: %f" % (MAE/float(n),minls/float(n))
 
-<<<<<<< HEAD
+
 ''' main() function uses Ridge() function from 
 	sklearn.linear_model package and nfolcv() 
 	for cross-validation
-=======
-''' main() function uses Ridge() function from sklearn.linear_model package
-	and nfolcv() for cross-validation
->>>>>>> 678dbab4164f215063c3d7ba57b55fccde8852f7
 '''
 def main():
     feat,y = loadRealData('spline_train.csv')
